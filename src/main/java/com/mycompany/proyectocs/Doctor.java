@@ -6,6 +6,7 @@ public class Doctor extends Persona {
 
     private String carnet;
     private String departamento;
+    public int numero;
 
     //Métodos
     @Override
