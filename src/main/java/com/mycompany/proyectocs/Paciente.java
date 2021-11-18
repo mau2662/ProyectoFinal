@@ -6,6 +6,7 @@ public class Paciente extends Persona {
 
     private String medicamentos; //Deberia ser cambiado a un ARRAYLIST
     private String padecimientos;
+    int num;
     
     //Métodos
     @Override
