@@ -13,12 +13,15 @@ public class Main {
 //        
 //        doc.mostrar_datos();
         
-        Paciente pac = new Paciente();
+      //  Paciente pac = new Paciente();
         
-        pac.pedir_datos();
+      //  pac.pedir_datos();
         
-        pac.mostrar_datos();
-        
+      //  pac.mostrar_datos();
+      frm_inicio inicio = new frm_inicio();
+        inicio.setLocationRelativeTo(null);
+        inicio.setVisible(true);
+        // Credenciales menudoctor = Doctor 123
     }
     
 }

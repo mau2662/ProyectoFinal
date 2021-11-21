@@ -7,6 +7,7 @@ public class Paciente extends Persona {
     private String medicamentos; //Deberia ser cambiado a un ARRAYLIST
     private String padecimientos;
     int num;
+    String datos = "";
     
     //Métodos
     @Override
@@ -24,10 +25,12 @@ public class Paciente extends Persona {
     }
 
     public void mostrar_datos() {
-
-        JOptionPane.showMessageDialog(null,"-DATOS DEL PACIENTE-\n" + "Cédula: " + this.cedula + "\nNombre: " + this.Nombre + "\nApellido: " + this.Apellido 
+        
+        datos = datos + "\n" +"Cédula: " + this.cedula + "\nNombre: " + this.Nombre + "\nApellido: " + this.Apellido 
                 + "\nEdad: " + this.edad + "\nTeléfono: " + this.telefono + "\nCorreo: " + this.correo 
-                + "\nMedicamentos: " + this.medicamentos + "\nPadecimientos: " + this.padecimientos);
+                + "\nMedicamentos: " + this.medicamentos + "\nPadecimientos: " + this.padecimientos + "\n\n";
+        
+        JOptionPane.showMessageDialog(null,"-DATOS DEL PACIENTE-\n" + datos);
 
     }
 
