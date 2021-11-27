@@ -7,6 +7,7 @@ public class Doctor extends Persona {
     private String carnet;
     private String departamento;
     public int numero2;
+    String datos = "";
 
     //Métodos
     @Override
@@ -26,10 +27,11 @@ public class Doctor extends Persona {
     @Override
     public void mostrar_datos() {
 
-        JOptionPane.showMessageDialog(null,"-DATOS DEL DOCTOR-\n" + "Cédula: " + this.cedula + "\nNombre: " + this.Nombre + "\nApellido: " + this.Apellido
+        datos = datos + "\n" + "Cédula: " + this.cedula + "\nNombre: " + this.Nombre + "\nApellido: " + this.Apellido
                 + "\nEdad: " + this.edad + "\nTeléfono: " + this.telefono + "\nCorreo: " + this.correo 
-                + "\nCarnet: " + this.carnet + "\nDepartamento: " + this.departamento);
-
+                + "\nCarnet: " + this.carnet + "\nDepartamento: " + this.departamento + "\n";
+        
+        JOptionPane.showMessageDialog(null,"-DATOS DEL DOCTOR-\n"+ datos);
     }
 
     //Constructores
