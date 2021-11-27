@@ -149,6 +149,11 @@ public class frm_inicio extends javax.swing.JFrame {
         if ((user.equals("Paciente"))&&(pass.equals("456"))){
             System.out.println("Ingreso como paciente");
             this.dispose();
+            
+            frm_Menupaciente pac = new frm_Menupaciente();
+            pac.setTitle("Menu paciente");
+            pac.setLocationRelativeTo(null);
+            pac.setVisible(true);
 
         }
     }//GEN-LAST:event_btn_inicioActionPerformed

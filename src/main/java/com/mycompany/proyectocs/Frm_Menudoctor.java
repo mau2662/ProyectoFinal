@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Frm_Menudoctor extends javax.swing.JFrame {
 Paciente pac = new Paciente();
-Doctor doc = new Doctor();
+
 ArrayList <Doctor> table = new ArrayList <Doctor>();
     /**
      * Creates new form Frm_Menudoctor
@@ -33,13 +33,17 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        lbl_encabezadodoc = new javax.swing.JLabel();
         btn_cerrarsesion = new javax.swing.JButton();
         Doctor_lbl = new javax.swing.JLabel();
         paciente_lbl = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_doc = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbl_paciente1 = new javax.swing.JTable();
+        lbl_encabezadodoc = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Doctormn = new javax.swing.JMenuItem();
@@ -47,6 +51,8 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
         jMenu2 = new javax.swing.JMenu();
         Doctormn2 = new javax.swing.JMenuItem();
         Pacientemn2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,10 +67,22 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbl_encabezadodoc.setText("BIENVENIDO ESTIMADO COLABORADOR");
-
+        btn_cerrarsesion.setBackground(new java.awt.Color(255, 204, 204));
         btn_cerrarsesion.setText("Cerrar sesion");
         btn_cerrarsesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,8 +90,10 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
             }
         });
 
+        Doctor_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         Doctor_lbl.setText("DOCTOR");
 
+        paciente_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         paciente_lbl.setText("PACIENTE");
 
         tbl_doc.setModel(new javax.swing.table.DefaultTableModel(
@@ -89,37 +109,58 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
         ));
         jScrollPane2.setViewportView(tbl_doc);
 
+        tbl_paciente1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "En tratamiento"
+            }
+        ));
+        jScrollPane4.setViewportView(tbl_paciente1);
+
+        lbl_encabezadodoc.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        lbl_encabezadodoc.setText("BIENVENIDO ESTIMADO COLABORADOR");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 204, Short.MAX_VALUE)
+                .addComponent(lbl_encabezadodoc)
+                .addGap(188, 188, 188))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(btn_cerrarsesion))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(lbl_encabezadodoc))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Doctor_lbl)
-                        .addGap(187, 187, 187)
-                        .addComponent(paciente_lbl))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Doctor_lbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(paciente_lbl))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_cerrarsesion)
+                .addGap(245, 245, 245))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_encabezadodoc)
                 .addGap(15, 15, 15)
+                .addComponent(lbl_encabezadodoc, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Doctor_lbl)
                     .addComponent(paciente_lbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(btn_cerrarsesion)
                 .addContainerGap())
@@ -165,6 +206,12 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("Buscar");
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Editar");
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,8 +220,8 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,6 +244,7 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
     private void DoctormnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctormnActionPerformed
         // TODO add your handling code here:
+        Doctor doc = new Doctor();
         doc.pedir_datos();
         table.add(doc);
         mostrar();
@@ -216,6 +264,7 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
     private void Doctormn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Doctormn2ActionPerformed
         // TODO add your handling code here:
+        Doctor doc = new Doctor();
         doc.mostrar_datos();
     }//GEN-LAST:event_Doctormn2ActionPerformed
 
@@ -274,14 +323,20 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
     private javax.swing.JButton btn_cerrarsesion;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JLabel lbl_encabezadodoc;
     private javax.swing.JLabel paciente_lbl;
     private javax.swing.JMenuItem pacientemn;
     private javax.swing.JTable tbl_doc;
+    private javax.swing.JTable tbl_paciente1;
     // End of variables declaration//GEN-END:variables
 }
