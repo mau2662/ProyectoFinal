@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Frm_Menudoctor extends javax.swing.JFrame {
 Paciente pac = new Paciente();
-
+Doctor docc = new Doctor();
 ArrayList <Doctor> table = new ArrayList <Doctor>();
     /**
      * Creates new form Frm_Menudoctor
@@ -244,9 +244,9 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
     private void DoctormnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctormnActionPerformed
         // TODO add your handling code here:
-        Doctor doc = new Doctor();
-        doc.pedir_datos();
-        table.add(doc);
+        Doctor docc = new Doctor();
+        docc.pedir_datos();
+        table.add(docc);
         mostrar();
         
     }//GEN-LAST:event_DoctormnActionPerformed
@@ -264,8 +264,8 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
     private void Doctormn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Doctormn2ActionPerformed
         // TODO add your handling code here:
-        Doctor doc = new Doctor();
-        doc.mostrar_datos();
+        
+        docc.mostrar_datos();
     }//GEN-LAST:event_Doctormn2ActionPerformed
 
     private void mostrar(){

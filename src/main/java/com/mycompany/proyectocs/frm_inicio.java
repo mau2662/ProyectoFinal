@@ -27,7 +27,9 @@ public class frm_inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnl_bg = new javax.swing.JPanel();
+        lbl_line = new javax.swing.JLabel();
+        lbl_line1 = new javax.swing.JLabel();
         txt_user = new javax.swing.JTextField();
         txt_pass = new javax.swing.JPasswordField();
         lbl_user = new javax.swing.JLabel();
@@ -35,92 +37,563 @@ public class frm_inicio extends javax.swing.JFrame {
         btn_inicio = new javax.swing.JButton();
         txt_cancelar = new javax.swing.JButton();
         lbl_image = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        lbl_imagendoc = new javax.swing.JLabel();
+        lbl_personaescala = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel40 = new javax.swing.JPanel();
+        jPanel39 = new javax.swing.JPanel();
+        jPanel38 = new javax.swing.JPanel();
+        jPanel36 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel30 = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        jPanel32 = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        jPanel35 = new javax.swing.JPanel();
+        jPanel37 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        pnl_bg.setBackground(new java.awt.Color(255, 255, 255));
+        pnl_bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbl_line.setText("-------------------------------------------");
+        pnl_bg.add(lbl_line, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+
+        lbl_line1.setText("-------------------------------------------");
+        pnl_bg.add(lbl_line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+
+        txt_user.setFont(new java.awt.Font("Roboto Light", 0, 11)); // NOI18N
+        txt_user.setToolTipText("");
+        txt_user.setBorder(null);
+        pnl_bg.add(txt_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 168, 31));
+
         txt_pass.setToolTipText("");
+        txt_pass.setBorder(null);
+        pnl_bg.add(txt_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 168, 31));
 
-        lbl_user.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        lbl_user.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         lbl_user.setText("USUARIO");
+        pnl_bg.add(lbl_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        lbl_pass.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        lbl_pass.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         lbl_pass.setText("CONTRASEÑA");
+        pnl_bg.add(lbl_pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         btn_inicio.setBackground(new java.awt.Color(204, 255, 255));
+        btn_inicio.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_inicio.setText("INICIAR");
         btn_inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_inicioActionPerformed(evt);
             }
         });
+        pnl_bg.add(btn_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 100, -1));
 
         txt_cancelar.setBackground(new java.awt.Color(255, 204, 204));
+        txt_cancelar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txt_cancelar.setText("CANCELAR");
         txt_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_cancelarActionPerformed(evt);
             }
         });
+        pnl_bg.add(txt_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 110, -1));
 
-        lbl_image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/hearth.png"))); // NOI18N
+        lbl_image.setBackground(new java.awt.Color(255, 153, 153));
+        lbl_image.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lbl_image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/corazonlogo.png"))); // NOI18N
+        pnl_bg.add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -30, 210, 160));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 443, Short.MAX_VALUE)
-                        .addComponent(txt_cancelar)
-                        .addGap(101, 101, 101))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_user)
-                            .addComponent(lbl_pass)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(86, 86, 86)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn_inicio)
-                                    .addComponent(txt_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                                    .addComponent(txt_user, javax.swing.GroupLayout.Alignment.TRAILING))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl_image)
-                        .addGap(39, 39, 39))))
+        jLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
+        jLabel1.setText("INICIO DE SESION");
+        pnl_bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+
+        lbl_imagendoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/doc.png"))); // NOI18N
+        pnl_bg.add(lbl_imagendoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
+
+        lbl_personaescala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/escaalnndo2.png"))); // NOI18N
+        pnl_bg.add(lbl_personaescala, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 160, 60));
+
+        jPanel5.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(lbl_user)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_user, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl_pass)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbl_image)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_inicio)
-                    .addComponent(txt_cancelar))
-                .addGap(44, 44, 44))
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
+
+        pnl_bg.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 20, 20));
+
+        jPanel40.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
+        jPanel40.setLayout(jPanel40Layout);
+        jPanel40Layout.setHorizontalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel40Layout.setVerticalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 30, -1));
+
+        jPanel39.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
+        jPanel39.setLayout(jPanel39Layout);
+        jPanel39Layout.setHorizontalGroup(
+            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel39Layout.setVerticalGroup(
+            jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 270, -1, -1));
+
+        jPanel38.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
+        jPanel38.setLayout(jPanel38Layout);
+        jPanel38Layout.setHorizontalGroup(
+            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel38Layout.setVerticalGroup(
+            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, -1, -1));
+
+        jPanel36.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, 30, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 380, 30));
+
+        jPanel3.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 290, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 290, -1));
+
+        jPanel4.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 320, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, 70, 320));
+
+        jPanel6.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 140, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 230, 140));
+
+        jPanel7.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 20, 10));
+
+        jPanel8.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, 10));
+
+        jPanel10.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 20, 20));
+
+        jPanel11.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 262, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, 160));
+
+        jPanel12.setBackground(new java.awt.Color(158, 217, 229));
+        jPanel12.setForeground(new java.awt.Color(240, 240, 240));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 372, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 170, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, 170));
+
+        jPanel9.setBackground(new java.awt.Color(255, 153, 153));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, -1, -1));
+
+        jPanel13.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, -2, 150, 230));
+
+        jPanel21.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
+
+        jPanel23.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
+
+        jPanel26.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, -1));
+
+        jPanel27.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
+
+        jPanel28.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, -1, -1));
+
+        jPanel29.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, -1));
+
+        jPanel30.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
+        jPanel30.setLayout(jPanel30Layout);
+        jPanel30Layout.setHorizontalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel30Layout.setVerticalGroup(
+            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 350, -1, -1));
+
+        jPanel31.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, 10));
+
+        jPanel33.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+        jPanel33.setLayout(jPanel33Layout);
+        jPanel33Layout.setHorizontalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel33Layout.setVerticalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, 20));
+
+        jPanel32.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, 20));
+
+        jPanel34.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
+        jPanel34.setLayout(jPanel34Layout);
+        jPanel34Layout.setHorizontalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel34Layout.setVerticalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, -1, 10));
+
+        jPanel35.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+        jPanel35.setLayout(jPanel35Layout);
+        jPanel35Layout.setHorizontalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+        jPanel35Layout.setVerticalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 10, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 10, 10));
+
+        jPanel37.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+        jPanel37.setLayout(jPanel37Layout);
+        jPanel37Layout.setHorizontalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel37Layout.setVerticalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
+
+        jPanel22.setBackground(new java.awt.Color(158, 217, 229));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        pnl_bg.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 20, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnl_bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
         );
 
         pack();
@@ -200,10 +673,48 @@ public class frm_inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_inicio;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel lbl_image;
+    private javax.swing.JLabel lbl_imagendoc;
+    private javax.swing.JLabel lbl_line;
+    private javax.swing.JLabel lbl_line1;
     private javax.swing.JLabel lbl_pass;
+    private javax.swing.JLabel lbl_personaescala;
     private javax.swing.JLabel lbl_user;
+    private javax.swing.JPanel pnl_bg;
     private javax.swing.JButton txt_cancelar;
     private javax.swing.JPasswordField txt_pass;
     private javax.swing.JTextField txt_user;
