@@ -14,6 +14,7 @@ public class Frm_Menudoctor extends javax.swing.JFrame {
 Paciente pac = new Paciente();
 Doctor docc = new Doctor();
 ArrayList <Doctor> table = new ArrayList <Doctor>();
+ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     /**
      * Creates new form Frm_Menudoctor
      */
@@ -82,19 +83,26 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         btn_cerrarsesion.setBackground(new java.awt.Color(255, 204, 204));
+        btn_cerrarsesion.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_cerrarsesion.setText("Cerrar sesion");
         btn_cerrarsesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cerrarsesionActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_cerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 262, -1, -1));
 
         Doctor_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         Doctor_lbl.setText("DOCTOR");
+        jPanel1.add(Doctor_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         paciente_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         paciente_lbl.setText("PACIENTE");
+        jPanel1.add(paciente_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 40, -1, -1));
 
         tbl_doc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,6 +117,8 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
         ));
         jScrollPane2.setViewportView(tbl_doc);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 61, 107, 192));
+
         tbl_paciente1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -122,49 +132,11 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
         ));
         jScrollPane4.setViewportView(tbl_paciente1);
 
-        lbl_encabezadodoc.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        lbl_encabezadodoc.setText("BIENVENIDO ESTIMADO COLABORADOR");
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 61, 107, 192));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 204, Short.MAX_VALUE)
-                .addComponent(lbl_encabezadodoc)
-                .addGap(188, 188, 188))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Doctor_lbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paciente_lbl))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_cerrarsesion)
-                .addGap(245, 245, 245))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(lbl_encabezadodoc, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Doctor_lbl)
-                    .addComponent(paciente_lbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(btn_cerrarsesion)
-                .addContainerGap())
-        );
+        lbl_encabezadodoc.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        lbl_encabezadodoc.setText("BIENVENIDO ESTIMADO COLABORADOR");
+        jPanel1.add(lbl_encabezadodoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 20, -1, 14));
 
         jMenu1.setText("Añadir");
 
@@ -218,16 +190,11 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
         );
 
         pack();
@@ -253,7 +220,10 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
 
     private void pacientemnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacientemnActionPerformed
         // TODO add your handling code here:
+        Paciente pac = new Paciente();
         pac.pedir_datos();
+        table2.add(pac);
+        mostrarp();
         
     }//GEN-LAST:event_pacientemnActionPerformed
 
@@ -279,6 +249,21 @@ ArrayList <Doctor> table = new ArrayList <Doctor>();
                 "Disponibles"
             }
         ));   
+    }
+    
+    private void mostrarp(){
+        
+          String dtrmp [][] = new String[table2.size()][1];
+        for (int i = 0; i < table2.size(); i++) {
+            dtrmp [i][0] = table2.get(i).getNombre();
+        }
+        
+        tbl_paciente1.setModel(new javax.swing.table.DefaultTableModel(
+           dtrmp,
+            new String [] {
+                "En tratamiento"
+            }
+        ));
     }
     /**
      * @param args the command line arguments
