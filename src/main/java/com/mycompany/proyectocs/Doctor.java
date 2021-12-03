@@ -54,6 +54,7 @@ public class Doctor extends Persona {
 
     public void setCarnet(String carnet) {
         this.carnet = carnet;
+        
     }
 
     public String getDepartamento() {

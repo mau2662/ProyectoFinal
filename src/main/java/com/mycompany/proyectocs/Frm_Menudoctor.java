@@ -5,22 +5,25 @@
 package com.mycompany.proyectocs;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Usuario
  */
 public class Frm_Menudoctor extends javax.swing.JFrame {
-Paciente pac = new Paciente();
-Doctor docc = new Doctor();
-ArrayList <Doctor> table = new ArrayList <Doctor>();
-ArrayList <Paciente> table2 = new ArrayList <Paciente>();
+
+    Paciente pac = new Paciente();
+    Doctor docc = new Doctor();
+    ArrayList<Doctor> table = new ArrayList<Doctor>();
+    ArrayList<Paciente> table2 = new ArrayList<Paciente>();
+
     /**
      * Creates new form Frm_Menudoctor
      */
     public Frm_Menudoctor() {
         initComponents();
-        
+
     }
 
     /**
@@ -52,7 +55,9 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jMenu2 = new javax.swing.JMenu();
         Doctormn2 = new javax.swing.JMenuItem();
         Pacientemn2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        buscarDoc = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        buscarPaciente = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -178,8 +183,20 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Buscar");
-        jMenuBar1.add(jMenu3);
+        buscarDoc.setText("Buscar");
+
+        jMenuItem1.setText("Doctor");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        buscarDoc.add(jMenuItem1);
+
+        buscarPaciente.setText("Paciente");
+        buscarDoc.add(buscarPaciente);
+
+        jMenuBar1.add(buscarDoc);
 
         jMenu4.setText("Editar");
         jMenuBar1.add(jMenu4);
@@ -215,7 +232,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         docc.pedir_datos();
         table.add(docc);
         mostrar();
-        
+
     }//GEN-LAST:event_DoctormnActionPerformed
 
     private void pacientemnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacientemnActionPerformed
@@ -224,7 +241,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         pac.pedir_datos();
         table2.add(pac);
         mostrarp();
-        
+
     }//GEN-LAST:event_pacientemnActionPerformed
 
     private void Pacientemn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pacientemn2ActionPerformed
@@ -234,37 +251,45 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
 
     private void Doctormn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Doctormn2ActionPerformed
         // TODO add your handling code here:
-        
+
         docc.mostrar_datos();
     }//GEN-LAST:event_Doctormn2ActionPerformed
 
-    private void mostrar(){
-        String dtrm [][] = new String[table.size()][1];
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+
+        JOptionPane.showInputDialog("Inserte el nombre del doctor que desea buscar");
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void mostrar() {
+        String dtrm[][] = new String[table.size()][1];
         for (int i = 0; i < table.size(); i++) {
-            dtrm [i][0] = table.get(i).getNombre();
+            dtrm[i][0] = table.get(i).getNombre();
         }
-     tbl_doc.setModel(new javax.swing.table.DefaultTableModel(
-            dtrm,
-            new String [] {
-                "Disponibles"
-            }
-        ));   
-    }
-    
-    private void mostrarp(){
-        
-          String dtrmp [][] = new String[table2.size()][1];
-        for (int i = 0; i < table2.size(); i++) {
-            dtrmp [i][0] = table2.get(i).getNombre();
-        }
-        
-        tbl_paciente1.setModel(new javax.swing.table.DefaultTableModel(
-           dtrmp,
-            new String [] {
-                "En tratamiento"
-            }
+        tbl_doc.setModel(new javax.swing.table.DefaultTableModel(
+                dtrm,
+                new String[]{
+                    "Disponibles"
+                }
         ));
     }
+
+    private void mostrarp() {
+
+        String dtrmp[][] = new String[table2.size()][1];
+        for (int i = 0; i < table2.size(); i++) {
+            dtrmp[i][0] = table2.get(i).getNombre();
+        }
+
+        tbl_paciente1.setModel(new javax.swing.table.DefaultTableModel(
+                dtrmp,
+                new String[]{
+                    "En tratamiento"
+                }
+        ));
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -306,11 +331,13 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private javax.swing.JMenuItem Doctormn2;
     private javax.swing.JMenuItem Pacientemn2;
     private javax.swing.JButton btn_cerrarsesion;
+    private javax.swing.JMenu buscarDoc;
+    private javax.swing.JMenuItem buscarPaciente;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
