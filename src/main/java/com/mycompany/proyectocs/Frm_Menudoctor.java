@@ -11,9 +11,10 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class Frm_Menudoctor extends javax.swing.JFrame {
+Frm_Añadedoctor añade = new Frm_Añadedoctor();
 Paciente pac = new Paciente();
 Doctor docc = new Doctor();
-ArrayList <Doctor> table = new ArrayList <Doctor>();
+//ArrayList <Doctor> table = new ArrayList <Doctor>();
 ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     /**
      * Creates new form Frm_Menudoctor
@@ -45,6 +46,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jScrollPane4 = new javax.swing.JScrollPane();
         tbl_paciente1 = new javax.swing.JTable();
         lbl_encabezadodoc = new javax.swing.JLabel();
+        btn_update = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Doctormn = new javax.swing.JMenuItem();
@@ -54,6 +56,9 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         Pacientemn2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -134,9 +139,18 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 61, 107, 192));
 
-        lbl_encabezadodoc.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        lbl_encabezadodoc.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         lbl_encabezadodoc.setText("BIENVENIDO ESTIMADO COLABORADOR");
-        jPanel1.add(lbl_encabezadodoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 20, -1, 14));
+        jPanel1.add(lbl_encabezadodoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, 20));
+
+        btn_update.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        btn_update.setText("Update");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updateActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         jMenu1.setText("Añadir");
 
@@ -182,7 +196,23 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Editar");
+
+        jMenuItem1.setText("Doctor");
+        jMenu4.add(jMenuItem1);
+
         jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Eliminar");
+
+        jMenuItem2.setText("Doctor");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -190,7 +220,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,12 +239,14 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         inicio.setVisible(true);
     }//GEN-LAST:event_btn_cerrarsesionActionPerformed
 
+    
+    
     private void DoctormnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctormnActionPerformed
         // TODO add your handling code here:
-        Doctor docc = new Doctor();
-        docc.pedir_datos();
-        table.add(docc);
+        añade.setLocationRelativeTo(null);
+        añade.setVisible(true);
         mostrar();
+        this.dispose();
         
     }//GEN-LAST:event_DoctormnActionPerformed
 
@@ -238,10 +270,19 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         docc.mostrar_datos();
     }//GEN-LAST:event_Doctormn2ActionPerformed
 
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+        // TODO add your handling code here:
+      mostrar();  
+    }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     private void mostrar(){
-        String dtrm [][] = new String[table.size()][1];
-        for (int i = 0; i < table.size(); i++) {
-            dtrm [i][0] = table.get(i).getNombre();
+        String dtrm [][] = new String[añade.table.size()][1];
+        for (int i = 0; i < añade.table.size(); i++) {
+            dtrm [i][0] = añade.table.get(i).getNombre();
         }
      tbl_doc.setModel(new javax.swing.table.DefaultTableModel(
             dtrm,
@@ -306,11 +347,15 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private javax.swing.JMenuItem Doctormn2;
     private javax.swing.JMenuItem Pacientemn2;
     private javax.swing.JButton btn_cerrarsesion;
+    private javax.swing.JButton btn_update;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
