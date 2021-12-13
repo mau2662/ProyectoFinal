@@ -104,8 +104,8 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
 
         lbl_doctordp.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_doctordp.setText("Departamento");
-        jPanel1.add(lbl_doctordp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 110, 20));
-        jPanel1.add(txt_departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 362, -1));
+        jPanel1.add(lbl_doctordp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 90, 20));
+        jPanel1.add(txt_departamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 362, -1));
 
         lbl_doctorid1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_doctorid1.setText("ID");
@@ -166,14 +166,14 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 120, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 30, 120));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 40, 120));
 
         jPanel3.setBackground(new java.awt.Color(158, 219, 240));
 
@@ -233,7 +233,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, -20, -1, -1));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, -20, 30, 80));
 
         jPanel9.setBackground(new java.awt.Color(158, 219, 240));
 
@@ -296,15 +296,13 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jPanel1.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, 10, 450));
 
         lbl_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/doc2.png"))); // NOI18N
-        jPanel1.add(lbl_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, -1, -1));
+        jPanel1.add(lbl_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

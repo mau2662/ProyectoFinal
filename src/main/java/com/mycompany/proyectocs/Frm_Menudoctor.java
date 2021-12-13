@@ -47,6 +47,10 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         tbl_paciente1 = new javax.swing.JTable();
         lbl_encabezadodoc = new javax.swing.JLabel();
         btn_update = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        lbl_corazon = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Doctormn = new javax.swing.JMenuItem();
@@ -56,9 +60,9 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         Pacientemn2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mn_editadoctor = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mn_eliminadoctor = new javax.swing.JMenuItem();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -99,7 +103,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
                 btn_cerrarsesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_cerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 262, -1, -1));
+        jPanel1.add(btn_cerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
 
         Doctor_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         Doctor_lbl.setText("DOCTOR");
@@ -152,6 +156,54 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         });
         jPanel1.add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
+        jPanel9.setBackground(new java.awt.Color(158, 219, 240));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 310));
+
+        jPanel10.setBackground(new java.awt.Color(158, 219, 240));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 130, 310));
+
+        jPanel11.setBackground(new java.awt.Color(158, 219, 240));
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 330, 40));
+
+        lbl_corazon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/corazon.png"))); // NOI18N
+        jPanel1.add(lbl_corazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 280, 230));
+
         jMenu1.setText("Añadir");
 
         Doctormn.setText("Doctor");
@@ -197,20 +249,25 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
 
         jMenu4.setText("Editar");
 
-        jMenuItem1.setText("Doctor");
-        jMenu4.add(jMenuItem1);
+        mn_editadoctor.setText("Doctor");
+        mn_editadoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mn_editadoctorActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mn_editadoctor);
 
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Eliminar");
 
-        jMenuItem2.setText("Doctor");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mn_eliminadoctor.setText("Doctor");
+        mn_eliminadoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mn_eliminadoctorActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem2);
+        jMenu5.add(mn_eliminadoctor);
 
         jMenuBar1.add(jMenu5);
 
@@ -224,7 +281,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -275,10 +332,24 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
       mostrar();  
     }//GEN-LAST:event_btn_updateActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mn_eliminadoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mn_eliminadoctorActionPerformed
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        Frm_Validador_id val = new Frm_Validador_id();
+        val.setNumerovalidador(1);
+        this.dispose();
+        val.setLocationRelativeTo(null);
+        val.setVisible(true);
+    }//GEN-LAST:event_mn_eliminadoctorActionPerformed
+
+    private void mn_editadoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mn_editadoctorActionPerformed
+        // TODO add your handling code here:
+        Frm_Validador_id val = new Frm_Validador_id();
+        val.setNumerovalidador(2);
+        this.dispose();
+        val.setLocationRelativeTo(null);
+        val.setVisible(true);
+    }//GEN-LAST:event_mn_editadoctorActionPerformed
 
     private void mostrar(){
         String dtrm [][] = new String[añade.table.size()][1];
@@ -355,16 +426,20 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JLabel lbl_corazon;
     private javax.swing.JLabel lbl_encabezadodoc;
+    private javax.swing.JMenuItem mn_editadoctor;
+    private javax.swing.JMenuItem mn_eliminadoctor;
     private javax.swing.JLabel paciente_lbl;
     private javax.swing.JMenuItem pacientemn;
     private javax.swing.JTable tbl_doc;
