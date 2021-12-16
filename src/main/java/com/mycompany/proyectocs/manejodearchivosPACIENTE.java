@@ -83,7 +83,9 @@ public class manejodearchivosPACIENTE {
             BufferedWriter bw = new BufferedWriter(fw);
 
             bw.write(this.obj_paciente.getNombre() + "," + this.obj_paciente.getApellido() + "," + this.obj_paciente.getEdad()
-                    + "," + this.obj_paciente.getCedula() + "," + this.obj_paciente.getCorreo() + "," + this.obj_paciente.getTelefono());
+                    + "," + this.obj_paciente.getCedula() + "," + this.obj_paciente.getCorreo() + "," + this.obj_paciente.getTelefono()+
+                    "," + this.obj_paciente.getMedicamentos() + "," + this.obj_paciente.getPadecimientos());
+            
             //FALTARIA UN METODO PARA AGREGAR PADECIMIENTOS Y MEDICAMENTOS DEL PACIENTE. UNA VEZ ESTE DEFINIDO COMO SE ALMACENARAN ESTOS DATOS,
             //SE DEBE AGREGAR AQUI PARA AÑADIRLO A CADA PACIENTE NUEVO.
 
@@ -99,7 +101,7 @@ public class manejodearchivosPACIENTE {
 
     }
 
-    public void eliminaDoctor() {
+    public void eliminapaciente() {
 
         try {
             String registro;
@@ -140,7 +142,7 @@ public class manejodearchivosPACIENTE {
 
     }
 
-    public void editarDoctor() {
+    public void editarpaciente() {
         
         try{
         String registro;

@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class Frm_Menudoctor extends javax.swing.JFrame {
 Frm_Añadedoctor añade = new Frm_Añadedoctor();
+Frm_Añadepaciente añadep = new Frm_Añadepaciente();
 Paciente pac = new Paciente();
 Doctor docc = new Doctor();
 //ArrayList <Doctor> table = new ArrayList <Doctor>();
@@ -61,8 +62,10 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         mn_editadoctor = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        mn_editapac = new javax.swing.JMenuItem();
+        mn_elim = new javax.swing.JMenu();
         mn_eliminadoctor = new javax.swing.JMenuItem();
+        mn_eliminarpac = new javax.swing.JMenuItem();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -257,9 +260,17 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         });
         jMenu4.add(mn_editadoctor);
 
+        mn_editapac.setText("Paciente");
+        mn_editapac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mn_editapacActionPerformed(evt);
+            }
+        });
+        jMenu4.add(mn_editapac);
+
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("Eliminar");
+        mn_elim.setText("Eliminar");
 
         mn_eliminadoctor.setText("Doctor");
         mn_eliminadoctor.addActionListener(new java.awt.event.ActionListener() {
@@ -267,9 +278,17 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
                 mn_eliminadoctorActionPerformed(evt);
             }
         });
-        jMenu5.add(mn_eliminadoctor);
+        mn_elim.add(mn_eliminadoctor);
 
-        jMenuBar1.add(jMenu5);
+        mn_eliminarpac.setText("Paciente");
+        mn_eliminarpac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mn_eliminarpacActionPerformed(evt);
+            }
+        });
+        mn_elim.add(mn_eliminarpac);
+
+        jMenuBar1.add(mn_elim);
 
         setJMenuBar(jMenuBar1);
 
@@ -309,10 +328,13 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
 
     private void pacientemnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pacientemnActionPerformed
         // TODO add your handling code here:
-        Paciente pac = new Paciente();
-        pac.pedir_datos();
-        table2.add(pac);
+        //Paciente pac = new Paciente();
+        //pac.pedir_datos();
+        //table2.add(pac);
+        añadep.setLocationRelativeTo(null);
+        añadep.setVisible(true);
         mostrarp();
+        this.dispose();
         
     }//GEN-LAST:event_pacientemnActionPerformed
 
@@ -350,6 +372,24 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         val.setLocationRelativeTo(null);
         val.setVisible(true);
     }//GEN-LAST:event_mn_editadoctorActionPerformed
+
+    private void mn_editapacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mn_editapacActionPerformed
+        // TODO add your handling code here:
+        Frm_Validador_id val = new Frm_Validador_id();
+        val.setNumerovalidador(4);
+        this.dispose();
+        val.setLocationRelativeTo(null);
+        val.setVisible(true);
+    }//GEN-LAST:event_mn_editapacActionPerformed
+
+    private void mn_eliminarpacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mn_eliminarpacActionPerformed
+        // TODO add your handling code here:
+        Frm_Validador_id val = new Frm_Validador_id();
+        val.setNumerovalidador(3);
+        this.dispose();
+        val.setLocationRelativeTo(null);
+        val.setVisible(true);
+    }//GEN-LAST:event_mn_eliminarpacActionPerformed
 
     private void mostrar(){
         String dtrm [][] = new String[añade.table.size()][1];
@@ -424,7 +464,6 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -439,7 +478,10 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private javax.swing.JLabel lbl_corazon;
     private javax.swing.JLabel lbl_encabezadodoc;
     private javax.swing.JMenuItem mn_editadoctor;
+    private javax.swing.JMenuItem mn_editapac;
+    private javax.swing.JMenu mn_elim;
     private javax.swing.JMenuItem mn_eliminadoctor;
+    private javax.swing.JMenuItem mn_eliminarpac;
     private javax.swing.JLabel paciente_lbl;
     private javax.swing.JMenuItem pacientemn;
     private javax.swing.JTable tbl_doc;

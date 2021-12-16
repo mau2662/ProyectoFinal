@@ -142,8 +142,10 @@ public class Frm_Validador_id extends javax.swing.JFrame {
     private void btn_ProcederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProcederActionPerformed
         // TODO add your handling code here:
         manejodearchivosDOCTOR obj_doctor = new manejodearchivosDOCTOR();
+        manejodearchivosPACIENTE obj_paciente = new manejodearchivosPACIENTE();
         String id = txt_id.getText();
         obj_doctor.setId(id);
+        obj_paciente.setId(id);
 
         if(numerovalidador == 1){
             //eliminar doc
@@ -155,10 +157,11 @@ public class Frm_Validador_id extends javax.swing.JFrame {
         }
         if(numerovalidador == 3){
             //eliminar pac
-            
+            obj_paciente.eliminapaciente();
         }
         if(numerovalidador == 4){
             //actualizar pac
+            obj_paciente.editarpaciente();
             
         }
 
