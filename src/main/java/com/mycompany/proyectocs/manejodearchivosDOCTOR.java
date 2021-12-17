@@ -157,6 +157,12 @@ public void editarDoctor(){
                 this.obj_doctor.setCorreo(JOptionPane.showInputDialog("Digite el nuevo correo "));
                 this.obj_doctor.setTelefono(JOptionPane.showInputDialog("Digite el nuevo numero telefonico "));
                 this.obj_doctor.setDepartamento(JOptionPane.showInputDialog("Digite el nuevo departamento "));
+                
+                bw.write(this.obj_doctor.getNombre()+ "," + this.obj_doctor.getApellido() + "," + this.obj_doctor.getEdad() + "," + this.obj_doctor.getCarnet()
+                + "," + this.obj_doctor.getCedula() + "," + this.obj_doctor.getCorreo() + ","+ this.obj_doctor.getTelefono() + "," + this.obj_doctor.getDepartamento());
+                
+                bw.flush();
+                bw.newLine();
             }else{
                 bw.write(regi);
                 bw.flush();

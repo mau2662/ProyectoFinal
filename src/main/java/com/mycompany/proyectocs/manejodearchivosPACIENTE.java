@@ -163,6 +163,15 @@ public class manejodearchivosPACIENTE {
                 this.obj_paciente.setCedula(JOptionPane.showInputDialog("Ingrese la nueva cedula "));
                 this.obj_paciente.setCorreo(JOptionPane.showInputDialog("Ingrese el nuevo correo "));
                 this.obj_paciente.setTelefono(JOptionPane.showInputDialog("Ingrese el nuevo telefono "));
+                this.obj_paciente.setPadecimientos("Digite el padecimiento del paciente");
+                this.obj_paciente.setMedicamentos("Digite el medicamento recetado");
+                
+                bw.write(this.obj_paciente.getNombre()+ "," + this.obj_paciente.getApellido() + "," + this.obj_paciente.getEdad() + "," + this.obj_paciente.getCedula()
+                + "," + this.obj_paciente.getCorreo() + ","+ this.obj_paciente.getTelefono()+ ","+ this.obj_paciente.getPadecimientos() + 
+                        ","+ this.obj_paciente.getMedicamentos());
+                
+                bw.flush();
+                bw.newLine();
                 
 
             } else {
@@ -185,10 +194,7 @@ public class manejodearchivosPACIENTE {
         }
 
     }
-    catch (Exception e
-
-    
-        ) {
+    catch (Exception e) {
             e.printStackTrace();
     }
 }

@@ -56,6 +56,7 @@ public class Frm_Añadepaciente extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         lbl_imagen = new javax.swing.JLabel();
@@ -97,12 +98,12 @@ public class Frm_Añadepaciente extends javax.swing.JFrame {
         lbl_pacientemedicamentos.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_pacientemedicamentos.setText("Medicamentos");
         jPanel1.add(lbl_pacientemedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 111, 20));
-        jPanel1.add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 362, -1));
-        jPanel1.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 362, -1));
-        jPanel1.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 362, -1));
-        jPanel1.add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 362, -1));
-        jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 362, -1));
-        jPanel1.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 362, -1));
+        jPanel1.add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 362, -1));
+        jPanel1.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 362, -1));
+        jPanel1.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 362, -1));
+        jPanel1.add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 362, -1));
+        jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 362, -1));
+        jPanel1.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 362, -1));
         jPanel1.add(txt_medicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 362, -1));
 
         btn_añadir.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -133,10 +134,10 @@ public class Frm_Añadepaciente extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGap(0, 90, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 40, 150));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 40, 90));
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -148,18 +149,19 @@ public class Frm_Añadepaciente extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(0, 30, Short.MAX_VALUE)
-                .addComponent(lbl_pacientetel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(lbl_pacientetel)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(229, Short.MAX_VALUE)
-                .addComponent(lbl_pacientetel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(221, 221, 221))
+                .addContainerGap(234, Short.MAX_VALUE)
+                .addComponent(lbl_pacientetel)
+                .addGap(219, 219, 219))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 470));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 470));
 
         jPanel4.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -223,15 +225,33 @@ public class Frm_Añadepaciente extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(255, 204, 204));
 
+        jPanel12.setBackground(new java.awt.Color(255, 204, 204));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 22, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 610, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 640, 20));
@@ -381,6 +401,7 @@ public class Frm_Añadepaciente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

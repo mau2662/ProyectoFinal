@@ -134,13 +134,13 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         lbl_doctortel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_doctortel.setText("Telefono");
         jPanel1.add(lbl_doctortel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 60, 20));
-        jPanel1.add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 362, -1));
-        jPanel1.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 362, -1));
-        jPanel1.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 362, -1));
-        jPanel1.add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 362, -1));
-        jPanel1.add(txt_carnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 362, -1));
-        jPanel1.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 362, -1));
-        jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 362, -1));
+        jPanel1.add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 362, -1));
+        jPanel1.add(txt_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 362, -1));
+        jPanel1.add(txt_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 362, -1));
+        jPanel1.add(txt_edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 362, -1));
+        jPanel1.add(txt_carnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 362, -1));
+        jPanel1.add(txt_correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 362, -1));
+        jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 362, -1));
 
         btn_añadir.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_añadir.setText("Añadir");
@@ -181,14 +181,14 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
+            .addGap(0, 130, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 470, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 470));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 470));
 
         jPanel4.setBackground(new java.awt.Color(158, 219, 240));
 

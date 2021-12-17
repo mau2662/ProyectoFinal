@@ -5,7 +5,18 @@
 package com.mycompany.proyectocs;
 
 import java.util.ArrayList;
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Usuario
@@ -15,8 +26,8 @@ Frm_Añadedoctor añade = new Frm_Añadedoctor();
 Frm_Añadepaciente añadep = new Frm_Añadepaciente();
 Paciente pac = new Paciente();
 Doctor docc = new Doctor();
-//ArrayList <Doctor> table = new ArrayList <Doctor>();
-ArrayList <Paciente> table2 = new ArrayList <Paciente>();
+manejodearchivosDOCTOR obj_doctor = new manejodearchivosDOCTOR();
+manejodearchivosPACIENTE obj_paciente = new manejodearchivosPACIENTE();
     /**
      * Creates new form Frm_Menudoctor
      */
@@ -39,17 +50,18 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
+        lbl_encabezadodoc = new javax.swing.JLabel();
         btn_cerrarsesion = new javax.swing.JButton();
         Doctor_lbl = new javax.swing.JLabel();
-        paciente_lbl = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_doc = new javax.swing.JTable();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tbl_paciente1 = new javax.swing.JTable();
-        lbl_encabezadodoc = new javax.swing.JLabel();
-        btn_update = new javax.swing.JButton();
+        btn_updatedoc = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tbl_paciente = new javax.swing.JTable();
+        paciente_lbl = new javax.swing.JLabel();
+        btn_updatepac = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         lbl_corazon = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -98,6 +110,10 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lbl_encabezadodoc.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        lbl_encabezadodoc.setText("BIENVENIDO ESTIMADO COLABORADOR");
+        jPanel1.add(lbl_encabezadodoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, 20));
+
         btn_cerrarsesion.setBackground(new java.awt.Color(255, 204, 204));
         btn_cerrarsesion.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btn_cerrarsesion.setText("Cerrar sesion");
@@ -106,15 +122,11 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
                 btn_cerrarsesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_cerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
+        jPanel1.add(btn_cerrarsesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
         Doctor_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
         Doctor_lbl.setText("DOCTOR");
         jPanel1.add(Doctor_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
-
-        paciente_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
-        paciente_lbl.setText("PACIENTE");
-        jPanel1.add(paciente_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 40, -1, -1));
 
         tbl_doc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,33 +143,14 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 61, 107, 192));
 
-        tbl_paciente1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "En tratamiento"
-            }
-        ));
-        jScrollPane4.setViewportView(tbl_paciente1);
-
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 61, 107, 192));
-
-        lbl_encabezadodoc.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        lbl_encabezadodoc.setText("BIENVENIDO ESTIMADO COLABORADOR");
-        jPanel1.add(lbl_encabezadodoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, 20));
-
-        btn_update.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
-        btn_update.setText("Update");
-        btn_update.addActionListener(new java.awt.event.ActionListener() {
+        btn_updatedoc.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        btn_updatedoc.setText("Update");
+        btn_updatedoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_updateActionPerformed(evt);
+                btn_updatedocActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_update, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        jPanel1.add(btn_updatedoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(158, 219, 240));
 
@@ -169,25 +162,67 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGap(0, 340, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 310));
+        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 340));
 
         jPanel10.setBackground(new java.awt.Color(158, 219, 240));
+
+        tbl_paciente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "En tratamiento"
+            }
+        ));
+        jScrollPane4.setViewportView(tbl_paciente);
+
+        paciente_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
+        paciente_lbl.setText("PACIENTE");
+
+        btn_updatepac.setFont(new java.awt.Font("Roboto", 0, 11)); // NOI18N
+        btn_updatepac.setText("Update");
+        btn_updatepac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updatepacActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(paciente_lbl))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btn_updatepac)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(paciente_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_updatepac)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 130, 310));
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 130, 340));
 
         jPanel11.setBackground(new java.awt.Color(158, 219, 240));
 
@@ -195,17 +230,17 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 390, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 330, 40));
+        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 390, 40));
 
         lbl_corazon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/contents/corazon.png"))); // NOI18N
-        jPanel1.add(lbl_corazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 280, 230));
+        jPanel1.add(lbl_corazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 280, 230));
 
         jMenu1.setText("Añadir");
 
@@ -296,11 +331,15 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -321,7 +360,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         // TODO add your handling code here:
         añade.setLocationRelativeTo(null);
         añade.setVisible(true);
-        mostrar();
+       
         this.dispose();
         
     }//GEN-LAST:event_DoctormnActionPerformed
@@ -333,7 +372,7 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         //table2.add(pac);
         añadep.setLocationRelativeTo(null);
         añadep.setVisible(true);
-        mostrarp();
+       
         this.dispose();
         
     }//GEN-LAST:event_pacientemnActionPerformed
@@ -346,13 +385,17 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private void Doctormn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Doctormn2ActionPerformed
         // TODO add your handling code here:
         
-        docc.mostrar_datos();
+        frm_mostrardoctor doc = new frm_mostrardoctor();
+        doc.setLocationRelativeTo(null);
+        doc.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Doctormn2ActionPerformed
 
-    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+    private void btn_updatedocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatedocActionPerformed
         // TODO add your handling code here:
-      mostrar();  
-    }//GEN-LAST:event_btn_updateActionPerformed
+      añadir();
+        
+    }//GEN-LAST:event_btn_updatedocActionPerformed
 
     private void mn_eliminadoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mn_eliminadoctorActionPerformed
 
@@ -391,33 +434,60 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
         val.setVisible(true);
     }//GEN-LAST:event_mn_eliminarpacActionPerformed
 
-    private void mostrar(){
-        String dtrm [][] = new String[añade.table.size()][1];
-        for (int i = 0; i < añade.table.size(); i++) {
-            dtrm [i][0] = añade.table.get(i).getNombre();
-        }
-     tbl_doc.setModel(new javax.swing.table.DefaultTableModel(
-            dtrm,
-            new String [] {
-                "Disponibles"
-            }
-        ));   
-    }
-    
-    private void mostrarp(){
+    private void btn_updatepacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatepacActionPerformed
+        // TODO add your handling code here:
+        añadirpac();
+    }//GEN-LAST:event_btn_updatepacActionPerformed
+
+    public void añadir(){
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
         
-          String dtrmp [][] = new String[table2.size()][1];
-        for (int i = 0; i < table2.size(); i++) {
-            dtrmp [i][0] = table2.get(i).getNombre();
-        }
-        
-        tbl_paciente1.setModel(new javax.swing.table.DefaultTableModel(
-           dtrmp,
-            new String [] {
-                "En tratamiento"
+        try{
+            archivo = new File (obj_doctor.getRuta() + obj_doctor.getNombre_archivo());
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+            
+            String line;
+            DefaultTableModel model_table = new DefaultTableModel();
+            model_table.addColumn("Disponibles");
+            while((line = br.readLine())!=null){
+                StringTokenizer st = new StringTokenizer(line,",");
+                String show = st.nextToken();
+                model_table.addRow(new String[]{show});
             }
-        ));
+            tbl_doc.setModel(model_table);
+            jTable1.setModel(model_table);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }         
     }
+    public void añadirpac(){
+        File archivo2 = null;
+        FileReader fr2 = null;
+        BufferedReader br2 = null;
+        
+        try{
+            archivo2 = new File (obj_paciente.getRuta() + obj_paciente.getNombre_archivo());
+            fr2 = new FileReader(archivo2);
+            br2 = new BufferedReader(fr2);
+            
+            String lines;
+            DefaultTableModel model_table2 = new DefaultTableModel();
+            model_table2.addColumn("En tratamiento");
+            while((lines = br2.readLine())!=null){
+                StringTokenizer st = new StringTokenizer(lines,",");
+                String show = st.nextToken();
+                model_table2.addRow(new String[]{show});
+            }
+            tbl_paciente.setModel(model_table2);
+            jTable2.setModel(model_table2);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }         
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -459,7 +529,8 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private javax.swing.JMenuItem Doctormn2;
     private javax.swing.JMenuItem Pacientemn2;
     private javax.swing.JButton btn_cerrarsesion;
-    private javax.swing.JButton btn_update;
+    private javax.swing.JButton btn_updatedoc;
+    private javax.swing.JButton btn_updatepac;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -485,6 +556,6 @@ ArrayList <Paciente> table2 = new ArrayList <Paciente>();
     private javax.swing.JLabel paciente_lbl;
     private javax.swing.JMenuItem pacientemn;
     private javax.swing.JTable tbl_doc;
-    private javax.swing.JTable tbl_paciente1;
+    private javax.swing.JTable tbl_paciente;
     // End of variables declaration//GEN-END:variables
 }

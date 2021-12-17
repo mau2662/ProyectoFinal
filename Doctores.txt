@@ -1,4 +1,2 @@
-Juan,Alvarez,25,44650,12345655,juan12@hosp.com,22665532,Cardiologia
 Ana,Perez,35,23569,77889562,Ana55@hosp.com,22336663,Cuidados intensivos
 Jorge,Naranjo,48,33569,26548652,Jorge46@hosp.com,22665423,Pediatria
-Maria,Alvarez,19,12596,12365891,Maria45@hosp.com,22556226,Enfermeria
